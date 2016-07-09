@@ -10,7 +10,7 @@ import org.tonykuo.service.dto.DemoDTO;
 
 @RestController
 @RequestMapping("/rest")
-public class DemoRestController {
+public class HelloRestController {
 
     @RequestMapping(value = "/getjson", produces = { "application/json;charset=UTF-8" })
     public DemoDTO getjson(DemoDTO obj) {

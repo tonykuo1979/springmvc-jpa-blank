@@ -57,7 +57,7 @@ public class JpaConfig {
         factoryBean.setDataSource(dataSource);
         factoryBean.setPackagesToScan(new String[] { "org.tonykuo" });
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-        vendorAdapter.setShowSql(true);
+        vendorAdapter.setShowSql(false);
         factoryBean.setJpaVendorAdapter(vendorAdapter);
         return factoryBean;
     }

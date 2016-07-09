@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.tonykuo.persistence.entity.HanksMasterUserId;
 import org.tonykuo.service.UserService;
+import org.tonykuo.service.util.LogUtil;
 
 @Controller
 public class HelloController {
@@ -15,13 +16,13 @@ public class HelloController {
     @RequestMapping("/index")
     public String hello() {
         
-        System.out.println("test = " + userSerice.findAll().size());
+        LogUtil.info("test = " + userSerice.findAll().size());
         
         // 2016061500001   0910360200
         HanksMasterUserId hanksMasterUserId = 
                 new HanksMasterUserId("2016061500001", "0910360200");
         
-        System.out.println("test 2 = " + userSerice.findOne(hanksMasterUserId).getId().getMasterUserId());
+        LogUtil.info("test 2 = " + userSerice.findOne(hanksMasterUserId).getId().getMasterUserId());
         
         return "index";
     }
