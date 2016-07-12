@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tonykuo.service.dto.DemoDTO;
+import org.tonykuo.service.util.LogUtil;
 
 @RestController
 @RequestMapping("/rest")
@@ -24,12 +25,12 @@ public class HelloRestController {
     
     @RequestMapping(value = "/parseJson", method = {RequestMethod.POST })
     public void saveDemo(@RequestBody DemoDTO demo) { 
-        System.out.println("demo = " + demo.toString());
+        LogUtil.info("demo = " + demo.toString());
     }
     
     @RequestMapping(value = "/parseJsonList", method = {RequestMethod.POST})
     public void saveDemoList(@RequestBody List<DemoDTO> demoList) { 
-        System.out.println("demoList = " + demoList);
+        LogUtil.info("demoList = " + demoList);
     } 
 
 }
